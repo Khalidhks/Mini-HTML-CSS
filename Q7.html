@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Card Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/bg.jpg');
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+        .row > div {
+            flex: 1;
+        }
+        .card-type {
+            margin-top: 10px;
+        }
+        .card-type input {
+            margin-right: 5px;
+        }
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>Credit Card Payment</h2>
+
+        <label for="cardholder">Cardholder Name</label>
+        <input type="text" id="cardholder" name="cardholder" required>
+
+        <label for="cardnumber">Card Number</label>
+        <input type="text" id="cardnumber" name="cardnumber" required>
+
+        <label>Expiration Date</label>
+        <div class="row">
+            <div>
+                <select name="expMonth" required>
+                    <option value="">Month</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+            </div>
+            <div>
+                <select name="expYear" required>
+                    <option value="">Year</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                    <option>2027</option>
+                    <option>2028</option>
+                    <option>2029</option>
+                    <option>2030</option>
+                </select>
+            </div>
+        </div>
+        
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv" required pattern="\d{3,4}" title="Please enter a valid CVV code (3 or 4 digits)">
+
+        <label>Card Type</label>
+        <div class="card-type">
+            <input type="radio" id="visa" name="cardType" value="Visa" required>
+            <label for="visa">Visa</label><br>
+            <input type="radio" id="mastercard" name="cardType" value="MasterCard">
+            <label for="mastercard">MasterCard</label><br>
+            <input type="radio" id="amex" name="cardType" value="American Express">
+            <label for="amex">American Express</label>
+        </div>
+
+        <button type="submit">Submit Payment</button>
+    </form>
+</body>
+</html>
